@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Práctica 4 - Novedades HTML5</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header>
+    <h1>Práctica 4: Novedades HTML5</h1>
+    <p>Objetivo: conocer las principales novedades implementadas en HTML5</p>
+  </header>
+
+  <nav>
+    <ul>
+      <li><a href="#inicio">Inicio</a></li>
+      <li><a href="#etiquetas">Etiquetas semánticas</a></li>
+      <li><a href="#multimedia">Multimedia</a></li>
+      <li><a href="#canvas">Canvas</a></li>
+    </ul>
+  </nav>
+
+  <div class="contenedor">
+
+    <section id="inicio">
+      <article>
+        <h2>¿Qué es HTML5?</h2>
+        <p>
+          HTML5 sustituye no sólo a HTML4, sino también a XHTML1 y DOM Nivel 2.
+          Esta versión permite una mayor interacción entre las páginas web y el
+          contenido multimedia (video, audio, entre otros), así como una mayor
+          facilidad a la hora de codificar el diseño básico de un sitio.
+        </p>
+      </article>
+
+      <article id="etiquetas">
+        <h2>Etiquetas semánticas</h2>
+        <p>
+          HTML5 introdujo nuevas etiquetas semánticas para estructurar los
+          documentos, evitando el uso excesivo de <code>&lt;div&gt;</code> para
+          identificar cada bloque de la página:
+        </p>
+        <ul>
+          <li><strong>&lt;header&gt;</strong>: encabezado del documento o de una sección.</li>
+          <li><strong>&lt;nav&gt;</strong>: crea un menú de navegación.</li>
+          <li><strong>&lt;section&gt;</strong>: agrupa contenido relacionado.</li>
+          <li><strong>&lt;article&gt;</strong>: define un artículo, comentario o publicación independiente.</li>
+          <li><strong>&lt;aside&gt;</strong>: contenido relacionado indirectamente, como una barra lateral.</li>
+          <li><strong>&lt;footer&gt;</strong>: pie de página o de sección.</li>
+        </ul>
+      </article>
+    </section>
+
+    <aside>
+      <h2>Dato extra</h2>
+      <p>
+        Las etiquetas <strong>header</strong> y <strong>footer</strong> ahorran
+        tener que insertar IDs para cada bloque, como se hacía antes con
+        <code>&lt;div id="header"&gt;</code>. Además, pueden usarse dentro de
+        cada sección, no solo de forma general.
+      </p>
+    </aside>
+
+    <section id="multimedia">
+      <h2>Elementos multimedia</h2>
+
+      <article>
+        <h3>&lt;video&gt;</h3>
+        <p>Permite reproducir video sin necesidad de plugins externos.</p>
+        <video width="320" height="240" controls>
+          <source src="video-ejemplo.mp4" type="video/mp4">
+          Tu navegador no soporta la etiqueta de video.
+        </video>
+      </article>
+
+      <article>
+        <h3>&lt;audio&gt;</h3>
+        <p>Permite reproducir audio directamente en el navegador.</p>
+        <audio controls>
+          <source src="audio-ejemplo.mp3" type="audio/mpeg">
+          Tu navegador no soporta la etiqueta de audio.
+        </audio>
+      </article>
+    </section>
+
+    <section id="canvas">
+      <h2>&lt;canvas&gt;</h2>
+      <p>
+        El elemento canvas permite dibujar gráficos por vectores usando
+        JavaScript, funcionando como un "lienzo" dentro del documento.
+      </p>
+      <canvas id="miLienzo" width="300" height="150"></canvas>
+    </section>
+
+  </div>
+
+  <footer>
+    <p>Práctica 4 - HTML5 | Miliani Chandomi Palacios</p>
+  </footer>
+
+  <script>
+    const canvas = document.getElementById('miLienzo');
+    const ctx = canvas.getContext('2d');
+    ctx.fillStyle = '#4c6b8a';
+    ctx.fillRect(20, 20, 100, 80);
+    ctx.strokeStyle = '#2f4356';
+    ctx.lineWidth = 4;
+    ctx.strokeRect(150, 20, 100, 80);
+    ctx.beginPath();
+    ctx.arc(220, 120, 20, 0, Math.PI * 2);
+    ctx.fillStyle = '#a8c3d9';
+    ctx.fill();
+  </script>
+
+</body>
+</html>
